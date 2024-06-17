@@ -1,0 +1,314 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    var Bangtin = ViewBag.Bangtin as List<News>;
+
+}
+
+<!-- Search Start -->
+<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+    <div class="container">
+        <div class="row g-2">
+            <h1 style="text-align:center">
+                Trang chủ
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Search End -->
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <h1 style="text-align:center" class="mb-3">Bảng Tin Chung Cư</h1>
+            @foreach (var item in Bangtin)
+            {
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="@Url.Content("~/contents/Images/News/" + item.Image)">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">@item.Title</h1>
+                    <p class="mb-4">@item.Description</p>
+
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+                </div>
+            }
+
+
+        </div>
+        <hr />
+    </div>
+</div>
+<!-- Category Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Tổng Quan Về Dự án</h1>
+
+        </div> <p>
+            Chỉ 5 phút lái xe từ trung tâm Q.1, bạn đã có thể chạm đến không gian lý tưởng đáp ứng nhu cầu
+            “sống – làm việc – giải trí” liền kề của Centana Thủ Thiêm. Dự án tọa lạc tại vị trí trọng điểm
+            – nơi giao nhau của 5 trục đường chính tại Thủ Thiêm: đại lộ Mai Chí Thọ, Nguyễn Thị Định, Lương Định Của,
+            Cao tốc Long Thành Dầu Giây và Song hành cao tốc.
+
+
+        </p>
+        <p>
+            Với tâm huyết và kinh nghiệm phát triển nhiều dự án khu Đông, chủ đầu tư đã mang đến một
+            không gian sống đầy đủ những tiện nghi 5 sao với mức giá cạnh tranh nhất khu vực Thủ Thiêm,
+            đưa căn hộ cao cấp đến “gần” tầm tay người mua.
+        </p>
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-apartment.png" alt="Icon">
+                        </div>
+                        <h6>Căn hộ</h6>
+                        <span>618 Căn hộ</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-villa.png" alt="Icon">
+                        </div>
+                        <h6>Penhouse</h6>
+                        <span>8 Penhouse</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-building.png" alt="Icon">
+                        </div>
+                        <h6>Tòa nhà</h6>
+                        <span>2 Tòa nhà</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-housing.png" alt="Icon">
+                        </div>
+                        <h6>Vị trí</h6>
+                        <span>Mặt tiền Mai Chí Thọ, P.An Phú,Q.2,Tp HCM</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-house.png" alt="Icon">
+                        </div>
+                        <h6>Căn 1 PN</h6>
+                        <span>43.9m²</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-neighborhood.png" alt="Icon">
+                        </div>
+                        <h6>Căn 2 PN</h6>
+                        <span>55.1 – 74 m² </span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-condominium.png" alt="Icon">
+                        </div>
+                        <h6>Căn 3 PN</h6>
+                        <span>88.2 – 97.1 m² </span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/users/img/icon-luxury.png" alt="Icon">
+                        </div>
+                        <h6>Căn Penhouse</h6>
+                        <span>120 - 180 m²</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Category End -->
+
+
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img fetchpriority="high" decoding="async" width="485" height="270" src="https://centana.vn/wp-content/uploads/2022/05/map-tien-ich-1-720x399.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h2 style="color: #fff;">VỊ TRÍ ĐẮC ĐỊA</h2>
+                <h2 style="color: #f7941e;">MẶT TIỀN ĐẠI LỘ MAI CHÍ THỌ</h2>
+                <div>
+                    <div class="wpb_wrapper">
+
+                        Centana Thủ Thiêm – tọa lạc ngay tại trung tâm hành chính Thủ Thiêm, Mặt tiền Đại lộ Mai Chí Thọ, P.An Phú, Quận 2, Tp HCM,. Centana Thủ Thiêm sở hữu vị trí giao thông liên vùng thuận tiện, tâm điểm của các tuyến đường huyết mạch: kết nối trực tiếp với hầm Thủ Thiêm để đến trung tâm Quận 1, cao tốc Long Thành – Dầu Giây&nbsp;và tuyến đường vành đai trong. Tại đây cư dân dễ dàng di chuyển vào Trung tâm, Sân bay hoặc các Tỉnh Miền Đông &amp; Miền Tây …
+                        <ul>
+                            <li><strong>2 Phút</strong>&nbsp;đến Trung tâm Thủ Thiêm</li>
+                            <li><strong>3 Phút</strong>&nbsp;đến Khu Đô Thị Sala</li>
+                            <li><strong>5 Phút</strong>&nbsp;đến Hầm Thủ Thiêm</li>
+                            <li><strong>5 Phút</strong>&nbsp;đến Metro Quận 2, Vincome Thảo Điền</li>
+                            <li><strong>5 Phút</strong>&nbsp;đến Bệnh Viện Quận 2</li>
+                            <li><strong>10 Phút</strong>&nbsp;đến Chợ Bến Thành</li>
+                            <li><strong>30 Phút</strong>&nbsp;đến Sân Bay Tân Sơn Nhất</li>
+                            <li><strong>30 Phút</strong>&nbsp;đến Sân Bay Long Thành</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row g-5 align-items-center">
+            <h3 style="color:#6ec1e4;text-align:center">KẾT NỐI TRỰC TIẾP VỚI TUYẾN METRO SỐ 2</h3>
+            <img decoding="async" width="1440" height="900" src="https://centana.vn/wp-content/uploads/2022/05/15591133_218258628629207_7456310135848068130_o.jpg"
+                 srcset="https://centana.vn/wp-content/uploads/2022/05/15591133_218258628629207_7456310135848068130_o.jpg 1440w,
+        https://centana.vn/wp-content/uploads/2022/05/15591133_218258628629207_7456310135848068130_o-768x480.jpg 768w" sizes="(max-width: 1440px) 100vw, 1440px">
+        </div>
+
+        <div class="row g-5 align-items-center">
+
+            <h3 style="color:#6ec1e4;text-align:center">MẶT BẰNG TỔNG THỂ</h3>
+            <img decoding="async" width="1100" height="583" src="https://centana.vn/wp-content/uploads/2022/05/Centana-Blocks.jpg" class="attachment-full size-full" alt="" srcset="https://centana.vn/wp-content/uploads/2022/05/Centana-Blocks.jpg 1100w, https://centana.vn/wp-content/uploads/2022/05/Centana-Blocks-768x407.jpg 768w" sizes="(max-width: 1100px) 100vw, 1100px">
+
+            <h3 style="color:#6ec1e4;text-align:center">THẾ NÀO LÀ “CHUẨN RIÊNG” CHO DOANH NHÂN TRẺ?</h3>
+
+
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img loading="lazy" decoding="async" width="800" height="534" src="https://centana.vn/wp-content/uploads/2022/05/1q.jpg" class="attachment-full size-full" alt="" srcset="https://centana.vn/wp-content/uploads/2022/05/1q.jpg 800w, https://centana.vn/wp-content/uploads/2022/05/1q-768x513.jpg 768w" sizes="(max-width: 800px) 100vw, 800px">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="elementor-widget-container">
+                    <h3 class="vc_custom_heading">VỊ TRÍ KẾT NỐI</h3>
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p>
+                                Centana Thủ Thiêm được xem như dấu ấn trên thị trường mà chủ đầu tư Điền Phúc
+                                Thành dành cho cộng đồng doanh nhân trẻ nhờ vào vị trí đẹp nhất tại khu vực
+                                Thủ Thiêm. Đây là khu căn hộ duy nhất trên thị trường hiện nay toa lạc tại vị trí
+                                giao nhau của 5 trục đường chính, gồm: Lương Định Của, Mai Chí Thọ, Nguyễn Thị Định,
+                                cao tốc Long Thành Dầu Giây, đường Song Hành cao tốc.
+                            </p>
+                            <p>
+                                Từ khu căn hộ này, các doanh
+                                nhân trẻ bận rộn có thể nhanh chóng gặp gỡ đối tác tại khu vực trung tâm Quận 1; đến sân bay
+                                cho những chuyến công tác xa hoặc thậm chí là di chuyển đến các tỉnh lân cận tại Vũng Tàu, các
+                                tỉnh Miền Đông hay các tỉnh Miền Tây.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img loading="lazy" decoding="async" width="485" height="275" src="https://centana.vn/wp-content/uploads/2022/05/phoi-canh-7.jpg" class="attachment-full size-full" alt="phoi-canh-7" srcset="https://centana.vn/wp-content/uploads/2022/05/phoi-canh-7.jpg 1995w, https://centana.vn/wp-content/uploads/2022/05/phoi-canh-7-768x433.jpg 768w, https://centana.vn/wp-content/uploads/2022/05/phoi-canh-7-1536x866.jpg 1536w" sizes="(max-width: 1995px) 100vw, 1995px">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="elementor-widget-container">
+                    <h3 class="vc_custom_heading">TIỆN NGHI 5 SAO</h3>
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p>
+                                Hiểu được nhu cầu được phục vụ tốt nhất sau những giờ làm việc căng thẳng
+                                , ngoài các tiện nghi chuẩn 5 sao như hồ bơi tràn bờ, công viên đá nghệ thuật, TTTM tập hợp các thương
+                                hiệu sang trọng, chủ đầu tư Điền Phúc Thành còn chú trọng đầu tư vào hệ thống nước sạch có thể uống trực
+                                tiếp từ vòi với công nghệ lọc nước chuẩn Châu Âu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img loading="lazy" decoding="async" width="485" height="325" src="https://centana.vn/wp-content/uploads/2022/05/Smart-Office.jpg" class="attachment-full size-full" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="elementor-widget-container">
+                    <h3 class="vc_custom_heading">KHU VĂN PHÒNG HIỆN ĐẠI</h3><div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p>
+                                Khu officetel với số lượng gần 200 căn cũng chính là điểm cộng thêm cho Centana Thủ Thiêm. Các doanh nhân trẻ muốn rút ngắn thời gian di chuyển đến văn phòng và có được nơi làm việc sang trọng, hiện đại nhưng cách trung tâm chỉ 5 phút có
+                                thể mua hoặc thuê lại một văn phòng phù hợp với nhu cầu tại toà tháp này.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+        <hr />
+    </div>
+</div>
+
+
+@* 
+
+<!-- Property List End -->
+<!-- Call to Action Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded p-3">
+            <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid rounded w-100" src="~/users/img/call-to-action.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="mb-4">
+                            <h1 class="mb-3">Contact With Our Certified Agent</h1>
+                            <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
+                        </div>
+                        <a href="" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                        <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Call to Action End -->
+ *@

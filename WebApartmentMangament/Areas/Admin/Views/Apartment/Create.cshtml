@@ -1,0 +1,49 @@
+﻿@model Apartment
+@{
+    ViewData["Title"] = "Create";
+    var BuildingId = ViewBag.BuildingId;
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">THÊM CĂN HỘ MỚI</h4>
+            <p class="card-description"> Nhập thông tin căn hộ </p>
+            <form class="forms-sample" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="BuildingId" class="form-label">Tòa nhà <span></span></label>
+                    <select asp-for="BuildingId" asp-items="BuildingId" class="form-select">
+                        <option value="">-- Chọn tòa nhà --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label> Tầng Số</label>
+                    <input class="form-control" asp-for="FloorNumber" placeholder=" Tầng Số" required>
+                </div>
+                <div class="form-group">
+                    <label >Căn Hộ Số</label>
+                    <input class="form-control" asp-for="ApartmentNumber" placeholder="Căn Hộ Số" required>
+                </div>
+                <div class="form-group">
+                    <label >Ngày Bàn Giao</label>
+                    <input class="form-control" asp-for="StartDay" placeholder="Ngày Bàn Giao" required>
+                </div>
+                <div class="form-group">
+                    <label >Diện Tích</label>
+                    <input class="form-control" asp-for="Area" placeholder="Diện Tích" required>
+                </div>
+                <div class="form-group">
+                    <label >Trạng Thái Căn Hộ</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Đã bàn giao</option>
+                        <option value="2">Còn trống</option>
+                        <option value="3">Bảo trì</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Thêm Mới</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>
+

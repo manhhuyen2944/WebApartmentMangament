@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Building>
+@using System.Security.Claims
+
+@{
+    var roles = Context.User.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToList();
+}
+
+<style>
+    .body {
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+
+<div class="page-header">
+    <h3 class="page-title"> DANH SÁCH TÒA NHÀ </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">DANH SÁCH TÒA NHÀ </h4>
+             @if (string.Join(", ", roles) == "Admin")
+                {
+            <a asp-action="Create" class="btn btn-success mb-2">Thêm</a>
+                }
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Mã toà nhà </th>
+                        <th> Tên tòa nhà  </th>
+                        <th> Căn hộ  </th>
+                        <th> Cư dân </th>
+                        <th> Trạng thái tòa nhà </th>
+                        <th> Thao tác  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.BuildingCode
+                            </td>
+                            <td> @item.BuildingName </td>
+                            <td>
+                              @*   <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div> *@
+                                @item.ApartmentNumber
+                            </td>
+                            <td> @item.AccNumber </td>
+                            @if(item.Status == 1)
+                            {
+                                <td> Hoạt động </td>
+                            }@if (item.Status == 2)
+                            {
+                                <td>Ngừng Hoạt động </td>
+                            }@if (item.Status == 3)
+                            {
+                                <td> Đang bảo trì </td>
+                            }
+
+                            <td>
+                                @if (string.Join(", ", roles) == "Admin")
+                                {
+                                    <a asp-action="Details" asp-route-id="@item.BuildingId" class="action-icon"> <i class="mdi mdi-eye" style="color:#19b6ff;font-size:25px;"></i>  </a>
+                                    <a asp-action="Edit" asp-route-id="@item.BuildingId" class="action-icon"> <i class="mdi mdi-square-edit-outline" style="color:#ffd83b;font-size:25px;"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.BuildingId" class="action-icon"> <i class="mdi mdi-delete" style="color:#e75555;font-size:25px;"></i></a>
+                                }
+                            </td>
+                            
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

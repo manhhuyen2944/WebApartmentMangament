@@ -1,0 +1,45 @@
+﻿@model WaterMeter
+@{
+    ViewData["Title"] = "Create";
+    var ApartmentId = ViewBag.ApartmentId;
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">THÊM ĐỒNG HỒ NƯỚC</h4>
+            <p class="card-description"> Nhập thông tin  </p>
+            <form class="forms-sample" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="ApartmentId" class="form-label">Căn hộ <span></span></label>
+                    <select asp-for="ApartmentId" asp-items="ApartmentId" class="form-select">
+                        <option value="">-- Chọn căn hộ --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ngày đăng ký</label>
+                    <input class="form-control" asp-for="RegistrationDate" placeholder="Ngày đăng ký" required>
+                </div>
+                <div class="form-group">
+                    <label>Chỉ số đầu</label>
+                    <input class="form-control" asp-for="NumberOne" placeholder="Chỉ số đầu" required>
+                </div>
+                <div class="form-group">
+                    <label>Chỉ số cuối</label>
+                    <input class="form-control" asp-for="NumberEnd" placeholder="Chỉ số cuối" required>
+                </div>
+                <div class="form-group">
+                    <label>Trạng Thái Căn Hộ</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Hoạt động</option>
+                        <option value="2">Ngừng hoạt động</option>
+                        <option value="3">Bảo trì</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Thêm Mới</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>
+

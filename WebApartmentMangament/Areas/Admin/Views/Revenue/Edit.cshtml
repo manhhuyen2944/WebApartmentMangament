@@ -1,0 +1,28 @@
+﻿@model Revenue
+@{
+    ViewData["Title"] = "Edit";
+
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">THANH TOÁN HÓA ĐƠN</h4>
+            <p class="card-description"> Nhập thông tin  </p>
+            <form class="forms-sample" asp-action="Edit"  asp-route-id ="@Model.Pay" method="post">
+                <input type="hidden" asp-for="RevenueId" />
+                <div class="form-group">
+                    <label>Tên dịch vụ</label>
+                    <input class="form-control" asp-for="Apartment.ApartmentCode" placeholder="Tên căn hộ" required readonly>
+                </div>
+                <div class="form-group">
+                    <label>Số tiền thanh toán</label>
+                    <input type="number" class="form-control" asp-for="Pay" placeholder="Số tiền thanh toán" required>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Thanh toán</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>
+

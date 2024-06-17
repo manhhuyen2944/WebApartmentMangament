@@ -1,0 +1,46 @@
+﻿@model Building
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Thêm Tòa nhà mới</h4>
+            <p class="card-description"> Nhập thông tin tòa nhà </p>
+            <form class="forms-sample" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Tên tòa nhà</label>
+                    <input type="text" class="form-control" asp-for="BuildingName" placeholder="Tên tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"> Mã tòa nhà</label>
+                    <input class="form-control" asp-for="BuildingCode" placeholder=" Mã tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Địa chỉ tòa nhà</label>
+                    <input class="form-control" asp-for="Address" placeholder="Địa chỉ tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Thành phố</label>
+                    <input class="form-control" asp-for="City" placeholder="Thành phố" required>
+                </div>       
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">ZIP (Mã bưu điện)</label>
+                    <input class="form-control" asp-for="Zip" placeholder="ZIP" required>
+                </div>     
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số tầng</label>
+                    <input class="form-control" asp-for="FloorNumber" placeholder="Số tầng" required>
+                </div>     
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số căn hộ</label>
+                    <input class="form-control" asp-for="ApartmentNumber" placeholder="Số căn hộ" required>
+                </div>   
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số cư dân</label>
+                    <input class="form-control" asp-for="AccNumber" placeholder="Số cư dân" required>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Thêm Mới</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>

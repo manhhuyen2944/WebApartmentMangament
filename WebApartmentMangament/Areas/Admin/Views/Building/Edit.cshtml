@@ -1,0 +1,76 @@
+﻿@model Building
+@{
+    ViewData["Title"] = "Edit";
+    if (Model.Status == 1)
+    {
+        <script>
+            document.querySelector('select[name="Status"]').value = '1';
+        </script>
+    }
+    else if (Model.Status == 2)
+    {
+        <script>
+            document.querySelector('select[name="Status"]').value = '2';
+        </script>
+    }
+    else if (Model.Status == 3)
+    {
+        <script>
+            document.querySelector('select[name="Status"]').value = '3';
+        </script>
+    }
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sửa Thông Tin Tòa Nhà </h4>
+            <p class="card-description"> Nhập thông tin tòa nhà </p>
+            <form class="forms-sample" asp-action="Edit" method="post">
+                <input type="hidden" asp-for="BuildingId" />
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Tên tòa nhà</label>
+                    <input type="text" class="form-control" asp-for="BuildingName" placeholder="Tên tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"> Mã tòa nhà</label>
+                    <input class="form-control" asp-for="BuildingCode" placeholder=" Mã tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Địa chỉ tòa nhà</label>
+                    <input class="form-control" asp-for="Address" placeholder="Địa chỉ tòa nhà" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Thành phố</label>
+                    <input class="form-control" asp-for="City" placeholder="Thành phố" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">ZIP (Mã bưu điện)</label>
+                    <input class="form-control" asp-for="Zip" placeholder="ZIP" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số tầng</label>
+                    <input class="form-control" asp-for="FloorNumber" placeholder="Số tầng" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số căn hộ</label>
+                    <input class="form-control" asp-for="ApartmentNumber" placeholder="Số căn hộ" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Số cư dân</label>
+                    <input class="form-control" asp-for="AccNumber" placeholder="Số cư dân" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Trạng thái tòa nhà</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Hoạt động</option>
+                        <option value="2">Ngừng hoạt động</option>
+                        <option value="3">Bảo trì</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-gradient-primary me-2">Sửa</button>
+                <button class="btn btn-light" asp-action="Index">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>

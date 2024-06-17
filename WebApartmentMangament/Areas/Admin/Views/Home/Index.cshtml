@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var Cudan = ViewBag.CuDan;
+    var CanHo = ViewBag.CanHo;
+    var ToaNha = ViewBag.ToaNha;
+
+}
+<h1 style="font-weight:bold">Trang chủ</h1>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-danger card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="LayoutAdmin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">
+                                Số tòa nhà<i style=" font-size: 32px;" class="mdi mdi-office-building"></i>
+                            </h4>
+                            <h2 class="mb-5">@ToaNha TÒA NHÀ</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-info card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="LayoutAdmin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">
+                                Số căn hộ<i style=" font-size: 32px;" class="mdi mdi-home"></i>
+                            </h4>
+                            <h2 class="mb-5">@CanHo CĂN HỘ</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-success card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="LayoutAdmin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">
+                                Số cư dân<i style=" font-size: 32px;" class="mdi mdi-account"></i>
+                            </h4>
+                            <h2 class="mb-5">@Cudan CƯ DÂN</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-apartment.png" alt="Icon">
+                                    </div>
+                                    <h6>Căn hộ</h6>
+                                    <span>618 Căn hộ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-villa.png" alt="Icon">
+                                    </div>
+                                    <h6>Penhouse</h6>
+                                    <span>8 Penhouse</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-building.png" alt="Icon">
+                                    </div>
+                                    <h6>Tòa nhà</h6>
+                                    <span>2 Tòa nhà</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-housing.png" alt="Icon">
+                                    </div>
+                                    <h6>Vị trí</h6>
+                                    <span>Mặt tiền Mai Chí Thọ, P.An Phú,Q.2,Tp HCM</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-house.png" alt="Icon">
+                                    </div>
+                                    <h6>Căn 1 PN</h6>
+                                    <span>43.9m²</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-neighborhood.png" alt="Icon">
+                                    </div>
+                                    <h6>Căn 2 PN</h6>
+                                    <span>55.1 – 74 m² </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-condominium.png" alt="Icon">
+                                    </div>
+                                    <h6>Căn 3 PN</h6>
+                                    <span>88.2 – 97.1 m² </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                            <a style=" text-decoration: none;" class="cat-item d-block bg-light text-center rounded p-3" href="">
+                                <div class="rounded p-4">
+                                    <div class="icon mb-3">
+                                        <img class="img-fluid" src="~/users/img/icon-luxury.png" alt="Icon">
+                                    </div>
+                                    <h6>Căn Penhouse</h6>
+                                    <span>120 - 180 m²</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

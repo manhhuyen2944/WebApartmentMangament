@@ -1,0 +1,107 @@
+﻿@model Account
+@{
+    ViewData["Title"] = "Edit";
+    var ApartmentId = ViewBag.ApartmentId;
+    var RelationshipId = ViewBag.RelationshipId;
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">SỬA THÔNG TIN CƯ DÂN</h4>
+            <p class="card-description"> Nhập thông tin  </p>
+            <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="AccountId" />
+                <div class="form-group">
+                    <label>Mã cư dân</label>
+                    <input  class="form-control" asp-for="Code" placeholder="Mã cư dân" required readonly>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApartmentId" class="form-label">Căn hộ <span></span></label>
+                    <select asp-for="ApartmentId" asp-items="ApartmentId" class="form-select" required>
+                        <option value="">-- Chọn căn hộ --</option >
+                    </select>
+                </div>        
+                <div class="form-group">
+                    <label asp-for="RelationshipId" class="form-label">Quan hệ <span></span></label>
+                    <select asp-for="RelationshipId" asp-items="RelationshipId" class="form-select" required>
+                        <option value="">-- Chọn quan hệ --</option>
+                    </select>
+                </div>
+                <div class="form-group  flex-grow-1 mx-4">
+                    <img src="@Url.Content("~/contents/Images/User/" + @Model.Avartar)" style="width: 200px; height: 200px; border-radius: 20px;" alt="" id="output">
+                    <label asp-for="Avartar" class="control-label"></label>
+                    <input type="file" name="fAvatar" asp-for="Avartar" class="form-control-file" onchange="loadFile(event)" />
+                    <span asp-validation-for="Avartar" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" asp-for="Email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label>Tài khoản</label>
+                    <input class="form-control" asp-for="UserName" placeholder="Tài khoản" required>
+                </div> 
+                <div class="form-group">
+                    <label>Họ Tên</label>
+                    <input class="form-control" asp-for="Info.FullName" placeholder="Họ Tên" required>
+                </div>
+                   <div class="form-group">
+                    <label>Đường</label>
+                    <input class="form-control" asp-for="Info.StreetAddress" placeholder="Đường" >
+                </div>
+                   <div class="form-group">
+                    <label>Phường</label>
+                    <input class="form-control" asp-for="Info.Ward" placeholder="Phường" >
+                </div>
+                   <div class="form-group">
+                    <label>Quận</label>
+                    <input class="form-control" asp-for="Info.District" placeholder="Quận" >
+                </div>
+                   <div class="form-group">
+                    <label>Thành phố</label>
+                    <input class="form-control" asp-for="Info.City" placeholder="Thành phố" >
+                </div>
+                   <div class="form-group">
+                    <label>Quốc gia</label>
+                    <input class="form-control" asp-for="Info.Country" placeholder="Quốc gia" >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Ngày Sinh</label>
+                    <input class="form-control" asp-for="Info.BirthDay" placeholder="Ngày Sinh" required>
+                </div>
+                <div class="form-group">
+                    <label>Trạng Thái</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Hoạt động</option>
+                        <option value="2">Ngừng hoạt động</option>
+
+                    </select>
+                </div>  <div class="form-group">
+                    <label>Giới tính</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Nam</option>
+                        <option value="2">Nữ</option>
+
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Sửa</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        var loadFile = function (event) {
+            var image = document.getElementById("output");
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+}

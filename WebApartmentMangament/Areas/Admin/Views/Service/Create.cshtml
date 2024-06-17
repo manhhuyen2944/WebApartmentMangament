@@ -1,0 +1,40 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Create";
+   
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">THÊM DỊCH VỤ</h4>
+            <p class="card-description"> Nhập thông tin  </p>
+            <form class="forms-sample" asp-action="Create" method="post">
+                
+                <div class="form-group">
+                    <label>Tên dịch vụ</label>
+                    <input class="form-control" asp-for="ServiceName" placeholder="Tên dịch vụ" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả dịch vụ</label>
+                    <input class="form-control" asp-for="Description" placeholder="Mô tả dịch vụ" required>
+                </div>
+                <div class="form-group">
+                    <label>Phí dịch vụ</label>
+                    <input class="form-control" asp-for="ServiceFee" placeholder="Phí dịch vụ" required>
+                </div>
+                <div class="form-group">
+                    <label>Trạng Thái Căn Hộ</label>
+                    <select class="form-control" asp-for="Status" placeholder="" required>
+                        <option value="1" selected>Hoạt động</option>
+                        <option value="2">Ngừng hoạt động</option>
+                        <option value="3">Bảo trì</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Thêm Mới</button>
+                <button asp-action="Index" class="btn btn-light">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>
+

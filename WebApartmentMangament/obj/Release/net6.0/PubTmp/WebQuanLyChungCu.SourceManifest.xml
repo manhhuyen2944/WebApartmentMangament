@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\SV\Desktop\DuAnCaNhan\code thue\WebQuanLyChungCu\WebQuanLyChungCu\obj\Release\net6.0\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\SV\Desktop\DuAnCaNhan\code thue\WebQuanLyChungCu\WebQuanLyChungCu\obj\Release\net6.0\PubTmp\EFSQLScripts\WebQuanLyChungCu.Models.QUANLYCHUNGCUContext.sql" />
+</sitemanifest>

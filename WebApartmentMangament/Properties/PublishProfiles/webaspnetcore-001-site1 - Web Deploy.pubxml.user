@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACxT2ihXowESz31usgOmA3AAAAAACAAAAAAAQZgAAAAEAACAAAAAHRJ6LrxPo+LbHi+gkHGfo+6zgGCg1OsSfiyXG7CkQ9QAAAAAOgAAAAAIAACAAAAAT2NFHE+fceZsgD+za3+oL2aziRAz8R6UZmzFpL0MKXiAAAADSao6kuADlTO6xL1EBzX0pQj5eVw3kILq+do+1xpRwL0AAAADu2fXJR5BlTgm7rwSlFrHE8nIr1sE2vOHDIehq4Ms0tLQesmXqnDMlpKY1M7yx7d6hQ6xwOw/tezoNR4bV97JK</EncryptedPassword>
+    <History>True|2023-12-30T13:41:16.0004399Z;False|2023-12-30T20:38:18.2874077+07:00;True|2023-12-26T10:31:40.1915337+07:00;True|2023-12-26T09:03:52.7146054+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="QuanLyChungCu">
+      <Value>Data Source=SQL5080.site4now.net%3bInitial Catalog=db_aa3319_webaspnetcore%3bUser Id=db_aa3319_webaspnetcore_admin%3bPassword=12345qwert</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WebQuanLyChungCu.Models.QUANLYCHUNGCUContext">
+      <Value>Data Source=SQL5080.site4now.net%3bInitial Catalog=db_aa3319_webaspnetcore%3bUser Id=db_aa3319_webaspnetcore_admin%3bPassword=12345qwert</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

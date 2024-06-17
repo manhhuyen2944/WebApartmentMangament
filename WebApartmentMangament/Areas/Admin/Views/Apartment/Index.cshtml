@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Apartment>
+@using System.Security.Claims
+
+@{
+    var roles = Context.User.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToList();
+}
+<div class="page-header">
+    <h3  class="page-title"> DANH SÁCH CĂN HỘ </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">DANH SÁCH CĂN HỘ </h4>
+            @if (string.Join(", ", roles) == "Admin")
+                {
+            <div class="d-flex justify-content-between">
+               
+                    <a asp-action="Create" class="btn btn-success mb-2">Thêm</a>
+
+                
+                <div class="ml-auto">
+                    <button type="button" class="btn btn-info mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Import File Excel
+                    </button>
+                   
+                </div>
+                </div>
+            }
+            @await Html.PartialAsync("_PartialViewCreateList" , new Apartment())
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> MÃ CĂN HỘ </th>
+                        <th> TÊN CĂN HỘ  </th>
+                        <th> BLOCK  </th>
+                        <th> SỐ NHÂN KHẨU </th>
+                        <th> DIỆN TÍCH   </th>
+                        <th> NGÀY BÀN GIAO  </th>
+                        <th>TRẠNG THÁI CĂN HỘ  </th>
+                        <th> THAO TÁC  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.ApartmentCode
+                            </td>
+                            <td> @item.ApartmentName </td>
+                            <td>
+                               @item.Building?.BuildingName
+                            </td>
+                            <td> 0 </td>
+                            <td> @item.Area m2 </td>
+                            <td> @item.StartDay </td>
+                            @if(item.Status == 1 )
+                            {
+                                <td> Đã bàn giao </td>
+                            }
+                            @if (item.Status == 2)
+                            {
+                                <td> Chưa bàn giao </td>
+                            } 
+                            @if (item.Status == 3)
+                            {
+                                <td> Bảo trì </td>
+                            }
+                           
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.ApartmentId" class="action-icon"> <i class="mdi mdi-eye" style="color:#19b6ff;font-size:25px;"></i>  </a>
+                                <a asp-action="Edit" asp-route-id="@item.ApartmentId" class="action-icon"> <i class="mdi mdi-square-edit-outline" style="color:#ffd83b;font-size:25px;"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.ApartmentId" class="action-icon"> <i class="mdi mdi-delete" style="color:#e75555;font-size:25px;"></i></a>
+                                <a asp-action="Create" title="Thêm dịch vụ" asp-controller="Apartment_Service" asp-route-id="@item.ApartmentId" class="action-icon">
+                                    <i class="mdi mdi-plus" style="color: green;font-size: 25px; font-weight: bold;"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

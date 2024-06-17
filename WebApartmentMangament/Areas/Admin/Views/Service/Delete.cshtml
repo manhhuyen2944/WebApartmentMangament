@@ -1,0 +1,62 @@
+﻿@model Service
+
+<h1>XÓA DỊCH VỤ</h1>
+<h3>Bạn có chắc là muốn xóa không?</h3>
+<div>
+
+    <hr />
+    <br />
+    <dl class="row">
+        <dt class="col-sm-2">
+
+           Tên dịch vụ 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceName)
+        </dd>
+        <dt class="col-sm-2">
+
+           Mô tả
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+
+            Phí dịch vụ / Tháng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceFee)
+        </dd>
+
+        <dt class="col-sm-2">
+
+            TRẠNG THÁI
+        </dt>
+
+        @if (Model.Status == 1)
+        {
+            <dd class="col-sm-10">
+                Đã bàn giao
+            </dd>
+        }@if (Model.Status == 2)
+        {
+            <dd class="col-sm-10">
+                Còn trống
+            </dd>
+        }@if (Model.Status == 3)
+        {
+            <dd class="col-sm-10">
+                Bảo trì
+            </dd>
+        }
+    </dl>
+    <br />
+    <form asp-action="Delete">
+        <div style="float: left; padding-right:10px">
+            <input type="hidden" asp-for="ServiceId" />
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+        </div>
+        <a class="btn btn-secondary" asp-action="Index">Quay Lại</a>
+    </form>
+</div>

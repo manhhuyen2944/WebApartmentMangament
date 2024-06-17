@@ -1,0 +1,99 @@
+﻿@model  Apartment
+@{
+    var CuDan = ViewBag.Account as List<Account>;
+
+}
+<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+	<div class="container">
+		<div class="row g-2">
+			<h1 style="text-align:center">
+				Căn hộ của tôi
+			</h1>
+		</div>
+	</div>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CĂN HỘ CỦA TÔI </h4>
+            
+               
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> MÃ CĂN HỘ </th>
+                        <th> TÊN CĂN HỘ  </th>
+                        <th> BLOCK  </th>
+                        <th> SỐ ĐIỆN  </th>
+                        <th> SỐ NƯỚC  </th>
+                       
+                        <th> DIỆN TÍCH   </th>
+                        <th> NGÀY BÀN GIAO  </th>
+                    </tr>
+                </thead>
+                <tbody>
+               
+                        <tr>
+                            <td class="py-1">
+                                @Model.ApartmentCode
+                            </td>
+                            <td> @Model.ApartmentName </td>
+                            <td>
+                                @Model.Building?.BuildingName
+                            </td>
+                            <td> @Model.ElectricMeters.FirstOrDefault().NumberEnd </td>
+                        <td> @Model.WaterMeters.FirstOrDefault().NumberEnd </td>
+                           
+                            <td> @Model.Area m2 </td>
+                            <td> @Model.StartDay </td>
+                          
+                        </tr>
+                 
+               
+
+                </tbody>
+            </table>
+
+            <h4 class="card-title">CÁC THÀNH VIÊN CĂN HỘ</h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> MÃ CƯ DÂN  </th>
+                        <th> CĂN HỘ  </th>
+                        <th> HỌ TÊN </th>
+                        <th> NGÀY SINH  </th>
+                        <th> ĐỊA CHỈ  </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in CuDan)
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.Code
+                            </td> <td class="py-1">
+                                @Model.ApartmentCode
+                            </td>
+                            <td> @item.Info?.FullName </td>
+                            <td>
+                                @item.Info?.BirthDay
+                            </td>
+                            <td>
+                                @item.Info?.StreetAddress  @item.Info?.Ward @item.Info?.District @item.Info?.City @item.Info?.Country
+                            </td>
+
+                        </tr>
+                    }
+                   
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

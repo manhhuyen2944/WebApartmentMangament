@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Revenue>
+
+<div class="page-header">
+    <h3 style="font-family:Helvetica;" class="page-title"> DANH SÁCH PHIẾU THU </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-family:Helvetica;" class="card-title"> DANH SÁCH PHIẾU THU </h4>
+            <div class="d-flex justify-content-between">
+              
+                <div class="ml-auto">
+                    <a asp-action="ExportExcel" class="btn btn-danger mb-2">Down Doanh Thu File Excel</a>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>MÃ CĂN HỘ </th>
+                        <th>TÊN CĂN HỘ </th>
+                        <th> TỔNG TIỀN  </th>
+                        <th> TIỀN NHẬN </th>
+                        <th> NGÀY TẠO  </th>
+                        <th> NGÀY THANH TOÁN  </th>
+                        <th> NGƯỜI THU </th>
+                        <th> THAO TÁC  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.Apartment?.ApartmentCode
+                            </td>
+                            <td> @item.Apartment?.ApartmentName </td>
+                            <td>
+                                @string.Format("{0:N0}", @item.TotalMoney) VNĐ
+                            </td>
+                            <td>
+                                @string.Format("{0:N0}", @item.Pay) VNĐ
+
+                            </td>
+                            <td>
+                                @item.DayCreat
+
+                            </td>
+                            <td>
+                                @(item.DayPay?.ToString("dd/MM/yyyy HH:mm") ?? "N/A")
+
+                            </td>
+                            <td>
+                                @item.Account.Info.FullName
+
+                            </td>
+                            <td>
+                                <a asp-action="XuatPhieuPDF" asp-route-id="@item.RevenueId" class="action-icon" style="text-decoration: none;color:#19b6ff">
+                                    <span style="color:#19b6ff;font-size:25px;">
+                                        <i class="fas fa-print"></i>
+                                    </span> Tất toán
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.RevenueId" class="action-icon"> <i class="mdi mdi-delete" style="color:#e75555;font-size:25px;"></i></a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Account>
+<div class="page-header">
+    <h3 style="font-family:Helvetica;" class="page-title"> DANH SÁCH QUẢN LÝ </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-family:Helvetica;" class="card-title"> DANH SÁCH QUẢN LÝ </h4>
+            <a asp-action="CreateQL" class="btn btn-success mb-2">Thêm</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Mã quản lý </th>
+                        <th> HỌ TÊN   </th>
+                        <th> NGÀY SINH </th>
+                        <th>    QUỐC TỊCH </th>
+                        <th> CHỨC VỤ </th>
+                        <th> TRẠNG THÁI  </th>
+                        <th> THAO TÁC  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.Code
+                            </td>
+                            <td>
+
+                                @item.Info?.FullName
+
+                            </td>
+                            <td>
+                                @item.Info?.BirthDay
+                            </td>
+               
+                            <td> @item.Info?.Country </td>
+                            <td> @item.Role?.RoleName </td>
+                            @if (item.Status == 1)
+                            {
+                                <td> Hoạt động </td>
+                            }@if (item.Status == 2)
+                            {
+                                <td>Ngừng Hoạt động </td>
+                            }@if (item.Status == 3)
+                            {
+                                <td> Đang bảo trì </td>
+                            }
+                            <td>
+                                <a asp-action="DetailsQL" asp-route-id="@item.AccountId" class="action-icon"> <i class="mdi mdi-eye" style="color:#19b6ff;font-size:25px;"></i>  </a>
+                                <a asp-action="EditQL" asp-route-id="@item.AccountId" class="action-icon"> <i class="mdi mdi-square-edit-outline" style="color:#ffd83b;font-size:25px;"></i></a>
+                                <a asp-action="DeleteQL" asp-route-id="@item.AccountId" class="action-icon"> <i class="mdi mdi-delete" style="color:#e75555;font-size:25px;"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
